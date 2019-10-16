@@ -1,5 +1,7 @@
 # modify this function, and create other functions below as you wish
 def binary_search(maxs,scores):
+
+
     s_min = min(scores)
     s_max = max(scores)
     arr = [0] * (s_max-s_min + 1)
@@ -16,7 +18,6 @@ def binary_search(maxs,scores):
                 lst.append(i+s_min)
         
     lst.reverse()
-    print(lst)
     if(lst[-1] > maxs):
         lst.insert(len(lst),maxs)
         index = len(lst)-1
@@ -43,10 +44,11 @@ def binary_search(maxs,scores):
 
            
 def question03(scores, alice):
-    from collections import Counter    
+    from collections import Counter
+
+    
     if(len(set(alice)) == len(alice)):
         result = binary_search(min(alice),scores)
-        #print('Going')
         return result
     else:
         count = Counter(alice)    
@@ -56,4 +58,7 @@ def question03(scores, alice):
             maxs = max(ls[0],maxs)
 
         result = binary_search(maxs,scores)
+        
+        # modify and then return the variable below
+        
         return result
